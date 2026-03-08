@@ -1,161 +1,114 @@
-BookCycle — Book Exchange & Selling Platform
+# 📚 BookCycle - Book Exchange & Selling Platform
 
-BookCycle is a full-stack web application designed to recycle knowledge by allowing readers to share, borrow, exchange, and sell books within their community.
+A full-stack web application designed to **recycle knowledge by allowing readers to share, borrow, exchange, and sell books within their community**.
 
-Instead of letting books sit unused on shelves, BookCycle enables them to move from one reader to another, creating a sustainable knowledge-sharing ecosystem.
+> 📖 *Recycle knowledge by passing books from one reader to another.*
 
-🌍 Project Vision
+![BookCycle](https://img.shields.io/badge/BookCycle-Platform-brightgreen)
+![React](https://img.shields.io/badge/React-18-blue)
+![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3-green)
+![Database](https://img.shields.io/badge/Database-MySQL-orange)
+![License](https://img.shields.io/badge/License-MIT-yellow)
 
-The goal of BookCycle is to promote knowledge recycling.
+---
 
-Instead of books staying unused after one reader finishes them, the platform allows books to circulate through a network of readers.
+# 🌍 Project Vision
 
-📖 “Recycle knowledge by passing books from one reader to another.”
+BookCycle promotes **knowledge recycling**.
 
-This approach:
+Instead of books staying unused after one reader finishes them, the platform allows books to **circulate between readers**, making learning more affordable and accessible.
 
-reduces educational costs
+Benefits:
 
-promotes sustainable learning
+- Reduce cost of educational books
+- Encourage reading culture
+- Promote sustainable knowledge sharing
+- Build local reading communities
 
-builds reading communities
+---
 
-✨ Key Features
-👤 For Readers
-📚 Browse Books
+# ✨ Features
 
-Search and filter books by:
+## 📖 For Readers
 
-Category
+- Browse books by **category, city, and author**
+- Borrow books for free
+- Exchange books with other users
+- Buy books at affordable prices
+- Add books to **wishlist**
+- Leave **reviews and ratings**
 
-City
+---
 
-Listing Type
+## 📚 For Book Owners
 
-Author
+- Add books with **title, author, cover image, description**
+- Set **listing type** (Borrow / Exchange / Sell)
+- Manage book listings
+- Accept or reject requests
+- Track requests and exchanges
 
-🔁 Multiple Listing Types
-Type	Description
-Borrow	Borrow books for free
-Exchange	Swap books with another user
-Sell	Buy books at affordable prices
-🔐 Authentication
+---
 
-Secure login and registration using JWT authentication.
+# ⚙️ Platform Features
 
-❤️ Wishlist
+✔ Secure authentication using **JWT**  
+✔ Book search and filtering  
+✔ City-based book discovery  
+✔ Wishlist system  
+✔ Admin dashboard  
+✔ Responsive UI design  
 
-Save books you want to read later.
+---
 
-⭐ Reviews & Ratings
+# 🏗️ System Architecture
 
-Rate books and share reading experiences.
+```mermaid
+flowchart LR
 
-📖 For Book Owners
-📤 List Your Books
+User[User Browser]
+Frontend[React Frontend]
+Backend[Spring Boot API]
+Database[(MySQL Database)]
 
-Add books with:
+User --> Frontend
+Frontend --> Backend
+Backend --> Database
+Database --> Backend
+Backend --> Frontend
+Frontend --> User
+````
 
-Cover image
+---
 
-Description
+# 🧰 Tech Stack
 
-Price (optional)
+## Frontend
 
-Book condition
+* React 18
+* Vite
+* React Router
+* Context API
+* CSS Modules
 
-⚙ Manage Listings
+## Backend
 
-Update or remove your book listings anytime.
+* Spring Boot 3
+* Spring Security
+* JWT Authentication
+* Spring Data JPA
+* Maven
 
-📩 Request Management
+## Database
 
-Accept or reject:
+* MySQL
+* H2 (for development)
 
-borrow requests
+---
 
-exchange requests
+# 📁 Project Structure
 
-purchase requests
-
-📊 Transaction Tracking
-
-Track book requests and exchanges.
-
-⚙️ Platform Features
-
-✔ City-based book discovery
-✔ Admin dashboard for management
-✔ Secure authentication system
-✔ Mobile-responsive UI
-✔ Book condition tracking
-
-🏗️ System Architecture
-🧰 Tech Stack
-Frontend
-
-React 18
-
-Vite
-
-React Router
-
-Context API
-
-CSS Modules
-
-Backend
-
-Spring Boot 3.x
-
-Spring Security
-
-JWT Authentication
-
-Spring Data JPA
-
-Maven
-
-Database
-
-MySQL
-
-H2 (for development)
-
-🚀 Getting Started
-Prerequisites
-
-Make sure you have installed:
-
-Node.js 18+
-
-Java 17+
-
-Maven
-
-MySQL (optional)
-
-🔧 Backend Setup
-cd bookshare-backend
-
-./mvnw clean install
-
-./mvnw spring-boot:run
-
-Backend runs at:
-
-http://localhost:8080
-💻 Frontend Setup
-cd bookshare-frontend
-
-npm install
-
-npm run dev
-
-Frontend runs at:
-
-http://localhost:5173
-📁 Project Structure
+```
 bookshare-platform
 │
 ├── bookshare-backend
@@ -176,81 +129,182 @@ bookshare-platform
 │       └── App.jsx
 │
 └── README.md
-🔌 API Endpoints
-Authentication
+```
+
+---
+
+# 🔌 API Endpoints
+
+## Authentication
+
+```
 POST /api/auth/register
 POST /api/auth/login
-Books
+```
+
+## Books
+
+```
 GET    /api/books
 GET    /api/books/{id}
 POST   /api/books
 PUT    /api/books/{id}
 DELETE /api/books/{id}
-Users
+```
+
+## Users
+
+```
 GET /api/users/me
 PUT /api/users/me
-Wishlist
+```
+
+## Wishlist
+
+```
 GET    /api/wishlist
 POST   /api/wishlist/{bookId}
 DELETE /api/wishlist/{bookId}
-Requests
+```
+
+## Requests
+
+```
 GET  /api/requests/sent
 GET  /api/requests/received
 POST /api/requests/{id}/accept
 POST /api/requests/{id}/reject
-📊 Database Design (Concept)
-🖼 UI Highlights
+```
 
-The platform includes:
+---
 
-Pastel themed interface
+# 🖼️ Screenshots
 
-Book grid and list view
+## Home Page
 
-Book detail pages
+<img src="images/homepage.png" width="800">
 
-Wishlist system
+## Book Listing
 
-Mobile-responsive layout
+<img src="images/book-list.png" width="800">
 
-Colors used:
+## Book Details
 
-Primary Yellow : #FEFF86
-Light Blue     : #B0DAFF
-Background     : White
-Text           : Dark Grey
-🔮 Future Improvements
+<img src="images/book-details.png" width="800">
 
-Possible future features:
+---
 
-AI book recommendation system
+# 🚀 Getting Started
 
-Nearby reader discovery
+## Prerequisites
 
-In-app chat between users
+Make sure you have installed:
 
-Book delivery integration
+* Node.js 18+
+* Java 17+
+* Maven
+* MySQL (optional)
 
-Mobile app version
+---
 
-🤝 Contributing
+# 🔧 Backend Setup
 
-Fork the repository
+```bash
+cd bookshare-backend
 
-Create a feature branch
+./mvnw clean install
 
+./mvnw spring-boot:run
+```
+
+Backend will start at:
+
+```
+http://localhost:8080
+```
+
+---
+
+# 💻 Frontend Setup
+
+```bash
+cd bookshare-frontend
+
+npm install
+
+npm run dev
+```
+
+Frontend will start at:
+
+```
+http://localhost:5173
+```
+
+---
+
+# 📊 Database Concept
+
+```mermaid
+erDiagram
+
+USER ||--o{ BOOK : owns
+BOOK ||--o{ REVIEW : has
+BOOK ||--o{ REQUEST : receives
+USER ||--o{ REQUEST : sends
+USER ||--o{ WISHLIST : saves
+```
+
+---
+
+# 🔮 Future Improvements
+
+Possible enhancements:
+
+* AI book recommendation system
+* Chat between users
+* Book delivery integration
+* Mobile application
+* Advanced search filters
+
+---
+
+# 🤝 Contributing
+
+1. Fork the repository
+
+2. Create feature branch
+
+```
 git checkout -b feature/new-feature
+```
 
-Commit changes
+3. Commit changes
 
+```
 git commit -m "Add new feature"
+```
 
-Push to GitHub
+4. Push to GitHub
 
+```
 git push origin feature/new-feature
+```
 
-Open a Pull Request
+5. Open Pull Request
 
-📜 License
+---
 
-This project is licensed under the MIT License.
+# 📜 License
+
+This project is licensed under the **MIT License**.
+
+---
+
+# Acknowledgment
+
+Made with passion for **book lovers and lifelong learners**.
+
+Because **knowledge should travel from one reader to another.**
+
+
